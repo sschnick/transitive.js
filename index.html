@@ -2,41 +2,23 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Made with Thimble</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"
-          integrity="sha512-wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw=="
-          crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"
-            integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=="
-            crossorigin=""></script>
+
+    <title>Transitive.js Demo</title>
+
+    <link rel="stylesheet" href="build/build.css">
+    <link rel="stylesheet" href="pages/style.css">
   </head>
   <body>
-    <h1>Welcome to Thimble</h1>
-    <p>
-      Make something <strong>amazing</strong> with the web!
-    </p>
-    <div id="mapid"></div>
-    <script src="data.js"></script>
-    <script>
-      
-      var mymap = L.map('mapid', {
-        inertia: false, zoomAnimation: false}).setView([38.894624, -77.074159], 13);
-      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3NjaG5pY2siLCJhIjoiY2l2aXo5ZG5kMDFmaTJ0bHZoYXA1MnJ3ZyJ9.YGxUgXBPEPsrlY3XWOJ9LQ', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox.streets',
-        accessToken: 'pk.eyJ1Ijoic3NjaG5pY2siLCJhIjoiY2l2aXo5ZG5kMDFmaTJ0bHZoYXA1MnJ3ZyJ9.YGxUgXBPEPsrlY3XWOJ9LQ'
-      }).addTo(mymap);
-      
-      // create the Transitive instance
-      var transitive = new Transitive({
-        data: DATA
-      });
 
-      // create and add the Transitive layer to the map
-      map.addLayer(new L.TransitiveLayer(transitive));
-    </script>
-    </body>
+    <div id="list"></div>
+    <div id="canvas">
+      <div id="legend"></div>
+    </div>
+
+    <script src="pages/data/test.js"></script>
+    <script src="build/build.js"></script>
+    <script src="pages/styles.js"></script>
+    <script src="pages/computed.js"></script>
+    <script src="pages/index.js"></script>
+  </body>
 </html>
